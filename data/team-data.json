@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Sara Al-Qahtani",
+    "role": "Frontend Developer",
+    "skills": ["React", "OutSystems", "CSS", "UI performance", "third-party API integration"],
+    "projects": ["Al Rajhi Customer Portal", "STC Pay Integration", "HR Dashboard"],
+    "current_project": "Operations Portal",
+    "available": true,
+    "bio": "Sara specializes in building fast, polished UIs. She has handled several third-party API integrations and is known for clean, maintainable frontend code."
+  },
+  {
+    "name": "Ahmed Al-Harbi",
+    "role": "Backend Developer",
+    "skills": ["REST APIs", "SQL", "OutSystems", "authentication", "database optimization"],
+    "projects": ["Payment Gateway", "HR Automation System", "Inventory Tool"],
+    "current_project": "HR Automation",
+    "available": false,
+    "bio": "Ahmed has deep experience with backend architecture, authentication systems, and SQL optimization. Go-to person for anything database or API related."
+  },
+  {
+    "name": "Nora Al-Shehri",
+    "role": "QA Engineer",
+    "skills": ["test automation", "manual testing", "Postman", "regression testing", "bug triage"],
+    "projects": ["Al Rajhi Customer Portal", "Payment Gateway", "Mobile App v2"],
+    "current_project": "Mobile App v2",
+    "available": true,
+    "bio": "Nora owns quality across most major projects. She builds test plans from scratch and is excellent at finding edge cases others miss."
+  },
+  {
+    "name": "Khalid Al-Dosari",
+    "role": "DevOps Engineer",
+    "skills": ["Docker", "CI/CD", "Linux", "deployment pipelines", "monitoring", "cloud infrastructure"],
+    "projects": ["Infrastructure Migration", "Payment Gateway", "Internal Tools Platform"],
+    "current_project": "Infrastructure Migration",
+    "available": true,
+    "bio": "Khalid manages deployments, pipelines, and infrastructure. If something is broken in production or you need a new environment set up, he is who you call."
+  },
+  {
+    "name": "Lama Al-Otaibi",
+    "role": "Business Analyst",
+    "skills": ["requirements gathering", "stakeholder management", "process mapping", "OutSystems", "documentation"],
+    "projects": ["HR Dashboard", "Operations Portal", "Client Onboarding Tool"],
+    "current_project": "Client Onboarding Tool",
+    "available": true,
+    "bio": "Lama bridges the gap between technical teams and business stakeholders. She is the person to talk to when requirements are unclear or you need to understand a business process."
+  },
+  {
+    "name": "Faisal Al-Mutairi",
+    "role": "Backend Developer",
+    "skills": ["Python", "FastAPI", "PostgreSQL", "microservices", "Redis"],
+    "projects": ["Internal Tools Platform", "Notification Service", "Reporting Engine"],
+    "current_project": "Reporting Engine",
+    "available": true,
+    "bio": "Faisal builds scalable backend services. He is the go-to for Python APIs, database design, and anything involving background jobs or notifications."
+  },
+  {
+    "name": "Reem Al-Zahrani",
+    "role": "UI/UX Designer",
+    "skills": ["Figma", "user research", "wireframing", "design systems", "prototyping"],
+    "projects": ["Mobile App v2", "Client Onboarding Tool", "HR Dashboard"],
+    "current_project": "Mobile App v2",
+    "available": false,
+    "bio": "Reem designs the user experience across all customer-facing products. If you need wireframes, design review, or user research, she is your first call."
+  },
+  {
+    "name": "Omar Al-Rasheed",
+    "role": "Full Stack Developer",
+    "skills": ["React", "Node.js", "OutSystems", "REST APIs", "JavaScript"],
+    "projects": ["Al Rajhi Customer Portal", "Client Onboarding Tool", "Operations Portal"],
+    "current_project": "Operations Portal",
+    "available": true,
+    "bio": "Omar works across the full stack and has deep OutSystems experience. He is the person to ask when a feature touches both frontend and backend and you are not sure where the problem is."
+  },
+  {
+    "name": "Hessa Al-Dossari",
+    "role": "Project Manager",
+    "skills": ["project planning", "stakeholder communication", "Jira", "risk management", "agile"],
+    "projects": ["Infrastructure Migration", "HR Automation System", "Payment Gateway"],
+    "current_project": "Infrastructure Migration",
+    "available": true,
+    "bio": "Hessa keeps large projects on track. If you have a dependency blocker, need to escalate something, or are unsure who owns a deliverable, she can help."
+  },
+  {
+    "name": "Turki Al-Anazi",
+    "role": "Data Engineer",
+    "skills": ["Python", "SQL", "ETL pipelines", "data warehousing", "Power BI"],
+    "projects": ["Reporting Engine", "HR Dashboard", "Finance Analytics"],
+    "current_project": "Finance Analytics",
+    "available": true,
+    "bio": "Turki builds data pipelines and reporting infrastructure. If you need data extracted, transformed, or visualized, he is the right person."
+  }
+]
