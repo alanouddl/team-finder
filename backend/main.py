@@ -5,7 +5,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator
 from google import genai
 from google.genai import types
 
@@ -37,6 +37,13 @@ app.add_middleware(
 class FindRequest(BaseModel):
     problem: str
 
+    @field_validator("problem")
+    @classmethod
+    def problem_must_not_be_empty(cls, value: str) -> str:
+        if not value.strip():
+            raise ValueError("problem must not be empty")
+        return value
+
 
 @app.post("/find")
 async def find_team_member(request: FindRequest):
@@ -55,4 +62,8 @@ Problem: {request.problem}"""
         )
         return {"recommendation": response.text}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        print(f"Gemini API error: {e}")
+        raise HTTPException(
+            status_code=503,
+            detail="I'm having trouble reaching the recommendation service right now. Please try again in a moment.",
+        )
