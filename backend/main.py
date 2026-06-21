@@ -7,10 +7,17 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from google import genai
+from google.genai import types
 
 load_dotenv()
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+
+SYSTEM_PROMPT = """You are an internal team assistant. You help employees find the right person to talk to about a problem or task.
+
+Only recommend people from the profiles you are given — never invent or assume someone outside that list. Always lead with the best qualified person first, and explain why they are the right fit based on their skills, role, or experience. If that person is unavailable, say so, then suggest a backup person. Never lead with the backup — the most qualified person always comes first, even if unavailable. If nobody in the profiles is a good match, say so honestly instead of forcing a recommendation.
+
+Keep responses conversational and clean, 2 to 4 sentences max. Never use markdown bold, asterisks, or other symbols — plain conversational text only."""
 
 DATA_PATH = Path(__file__).parent.parent / "data" / "team-data.json"
 
@@ -35,19 +42,16 @@ class FindRequest(BaseModel):
 async def find_team_member(request: FindRequest):
     team_json = json.dumps(TEAM_DATA, ensure_ascii=False, indent=2)
 
-    prompt = f"""You are a helpful assistant for a software team. Given a problem or task description, recommend the best team member(s) to handle it.
-
-Here is the team:
+    prompt = f"""Team profiles:
 {team_json}
 
-Problem: {request.problem}
-
-Respond with a clear recommendation. Name the person (or people) best suited, explain why based on their skills and experience, and note if they are currently available. Keep the response concise and practical."""
+Problem: {request.problem}"""
 
     try:
         response = client.models.generate_content(
             model="gemini-2.5-flash",
             contents=prompt,
+            config=types.GenerateContentConfig(system_instruction=SYSTEM_PROMPT),
         )
         return {"recommendation": response.text}
     except Exception as e:
